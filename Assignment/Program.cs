@@ -108,12 +108,15 @@ public class Pack
     }
 }
 
+//Providing methods for testing the classes of Pack and InventoryItem
 public static class PackTester
 {
+    //This particular method allows user to add items in the pack
     public static void AddEquipment(Pack pack)
     {
         while (true)
         {
+            //Its a menu item for choices
             Console.WriteLine("\nChoose an item to add to the pack:");
             Console.WriteLine("1. Arrow");
             Console.WriteLine("2. Bow");
@@ -182,12 +185,18 @@ class Program
 {
     static void Main(string[] args)
     {
+        //For the packages it sets the maximum count, weight and volume
         const int PackMaxItems = 10;
         const double PackMaxVolume = 20;
         const double PackMaxWeight = 30;
+        
+        //This is the pack class containing constraints
         Pack pack = new Pack(PackMaxItems, PackMaxVolume, PackMaxWeight);
+        //Adding items in the pack calling it as a packtester
         PackTester.AddEquipment(pack);
-
+        
+        
+//Waiting for the user to interact and will print the message if the program is completed
         Console.WriteLine("Program finished. Press any key to exit.");
         Console.ReadKey();
     }
